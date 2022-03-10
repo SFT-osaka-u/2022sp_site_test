@@ -1,0 +1,158 @@
+header{
+    position: fixed;
+    width:100%;
+    height:100px;
+    background-color: #174a5c;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    padding: 16px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+    height:50px;
+    background-color: #174a5c;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+}
+
+.body{
+    padding-top: 100px;
+}
+
+.main{
+    width: 85%;
+    padding: 10px;
+    margin-left: 15%;
+    background-color: #b3d87455;
+    height:1600px;
+}
+
+
+
+/* html {
+    font-family: "Hiragino Kaku Gothic Pro","Yu Gothic","Meiryo",sans-serif;
+    font-size : 100%;
+    line-height: 10px;
+    background-color: #f69e5333;
+    margin: 0;
+}
+  
+  body{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  p {
+    line-height: 8px;
+    margin: 10px;
+    line-height:16px;
+  }
+  
+  h1{
+    font-size: 48px;
+    color: white;
+    margin: 20px 0px;
+  }
+  
+  header{
+    width: 100%;
+    height: 150px;
+    background-color: #174a5c;
+    color: white;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+  }
+  ul.header-menu{
+    margin: 0;
+    padding: 0;
+  }
+  ul.header-menu li {
+    display: inline;
+    padding: 10px 0px 0px 0px;
+  }
+  ul.header-menu li a{
+    color: white;
+  }
+  header p{
+    margin: 0px;
+    padding: 0px;
+    line-height: 50px;
+    font-size: 16px;
+  }
+  
+  h2{
+    border-bottom: double 5px #8ac6d1;
+    font-size: 24px;
+  }
+  
+  h2:first-letter {
+    font-size: 36px;
+    color: #EB6100;
+  }
+  
+  table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    border: solid 0px #000000;
+    width: 97%;
+    margin: auto;
+  }
+  
+  button{
+    background: #336699;
+    color: #f5f4e8;
+    margin: 0px 0px 10px 10px;
+  }
+  
+  label{
+    font-size: 16px;
+  }
+  
+  table.kensakuTable{
+    border-collapse: collapse;
+    width: 97%;
+    margin: auto;
+  }
+  
+  table.kensakuTable th,table.kensakuTable tr,table.kensakuTable td{
+    border: solid 1px #a2a9af;
+    padding: 3px 10px;
+  }
+  
+  table.kensakuTable th{
+    background-color: #79bd9a99;
+  }
+  
+  table.kensakuTable td{
+    background-color: #ffffff;
+    height: 16px;
+  }
+  
+  .general{
+    margin: 20px;
+  }
+  
+  .isbnKensaku{
+    padding: 20px;
+    background-color: #00A0E933;
+  }
+  
+  .titleKensaku{
+    padding: 20px;
+    background-color: #79bd9a33;
+  }
+  
+  .form{
+    padding: 20px;
+    background-color: #fed95c33;
+  }
+  
+  .list{
+    padding: 20px;
+    background-color: #f69e5333;
+  } */
