@@ -1,158 +1,230 @@
 header{
-    position: fixed;
-    width:100%;
-    height:100px;
-    background-color: #174a5c;
-    color: white;
-    text-align: center;
-    margin: 0px 0px 0px 0px;
-    padding: 16px;
+  position: fixed;
+  width:100%;
+  height:100px;
+  background-color: #174a5c;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  padding-top: 10px;
+  z-index: 1;
 }
 
 footer{
-    position: fixed;
-    bottom: 0px;
-    width:100%;
-    height:50px;
-    background-color: #174a5c;
-    color: white;
-    text-align: center;
-    margin: 0px 0px 0px 0px;
+  position: fixed;
+  bottom: 0px;
+  width:100%;
+  height:70px;
+  background-color: #174a5c;
+  color: white;
+  text-align: center;
+  margin: 0px 0px 0px 0px;
+  z-index: 1;
+}
+
+#heading{
+  text-align: center;
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px;
+  margin:0px;
+}
+
+#schedule{
+  width:50%;
+  height: 40px;
+  text-align: right;
+  font-size: small;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+#place{
+  width:50%;
+  height:20px;
+  text-align: left;
+  font-size: small;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+#branch{
+  width:50%;
+  height: 15px;
+  text-align:end;
+  font-size: x-small;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+p{
+  margin-bottom:6px;
 }
 
 .body{
-    padding-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 70px;
 }
 
 .main{
-    width: 85%;
-    padding: 10px;
-    margin-left: 15%;
-    background-color: #b3d87455;
-    height:1600px;
+  width: 85%;
+  padding: 10px;
+  margin-left: 15%;
+  /* background-color: #b3d87455; */
+}
+
+.sub{
+  width:100%;
+  padding: 10px;
+  margin-left: 0;
+  /* background-color: #d874b355; */
+  /* height:1600px; */
+}
+
+.scrollBox{
+  height: 75px;
+  font-size: 12px;
+  overflow-y: scroll;
+  border-top: dashed #174a5c;
+  border-bottom: dashed #174a5c;
+  padding: 2px;
+  margin: 4px;
+}
+
+#flowBox{
+  height:20px;
+  margin:0px;
+}
+
+.flowInfo{
+  white-space: nowrap;
+  height: 20px;
+}
+
+#linkBox{
+  height: 50px;
+  margin:0px;
+}
+
+.footerLink{
+  float: left;
+  width: 33%;
+  height:50px;
+  margin:0px;
 }
 
 
 
-/* html {
-    font-family: "Hiragino Kaku Gothic Pro","Yu Gothic","Meiryo",sans-serif;
-    font-size : 100%;
-    line-height: 10px;
-    background-color: #f69e5333;
-    margin: 0;
-}
-  
-  body{
-    margin: 0px;
-    padding: 0px;
+
+/* ボタン全体 */
+.flowbtn8{
+  border-radius:50%;
+  position:relative;
+  display:inline-block;
+  width:50px;
+  height:50px;
+  font-size:30px;
+  text-decoration:none;
+  transition:.5s;
   }
-  
-  p {
-    line-height: 8px;
-    margin: 10px;
-    line-height:16px;
+  /* ボタンマウスホバー時のテキスト指定 */
+  .flowbtn8:hover{
+  color:#fff!important;
   }
-  
-  h1{
-    font-size: 48px;
-    color: white;
-    margin: 20px 0px;
+  /* アイコンをど真ん中に */
+  .flowbtn8 i{
+  position:absolute;
+  top:50%;
+  left:50%;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
   }
-  
-  header{
-    width: 100%;
-    height: 150px;
-    background-color: #174a5c;
-    color: white;
-    text-align: center;
-    margin: 0px 0px 0px 0px;
+  /* Twitter */
+  .flowbtn8.fl_tw2{
+  border:solid 1px #55acee;
+  color:#55acee;
   }
-  ul.header-menu{
-    margin: 0;
-    padding: 0;
+  /* Twitterマウスホバー時 */
+  .flowbtn8.fl_tw2:hover{
+  border:solid 1px #55acee;
+  background:#55acee;
   }
-  ul.header-menu li {
-    display: inline;
-    padding: 10px 0px 0px 0px;
+  /* Instagram */
+  .flowbtn8.insta_btn2 {
+  border:solid 1px #c6529a;
+  color:#c6529a;
+  font-size:35px;
   }
-  ul.header-menu li a{
-    color: white;
+  /* Instagramマウスホバー時 */
+  .flowbtn8.insta_btn2:hover{
+  border:solid 1px #c6529a;
+  background:#c6529a;
   }
-  header p{
-    margin: 0px;
-    padding: 0px;
-    line-height: 50px;
-    font-size: 16px;
+  /* LINE */
+  .flowbtn8.fl_li2{
+  border:solid 1px #00c300;
+  color:#00c300;
+  font-size:35px;
   }
-  
-  h2{
-    border-bottom: double 5px #8ac6d1;
-    font-size: 24px;
+  /* LINEマウスホバー時 */
+  .flowbtn8.fl_li2:hover{
+  border:solid 1px #00c300;
+  background:#00c300;
   }
-  
-  h2:first-letter {
-    font-size: 36px;
-    color: #EB6100;
+  /* お問い合わせ */
+  .flowbtn8.fl_ma2{
+  border:solid 1px #f3981d;
+  color:#f3981d;	
+  font-size:28px;
   }
-  
-  table {
-    border-collapse: separate;
-    border-spacing: 10px;
-    border: solid 0px #000000;
-    width: 97%;
-    margin: auto;
+  /* お問い合わせマウスホバー時 */
+  .flowbtn8.fl_ma2:hover{
+  border:solid 1px #f3981d;
+  background:#f3981d;
   }
-  
-  button{
-    background: #336699;
-    color: #f5f4e8;
-    margin: 0px 0px 10px 10px;
+  /* ulタグの内側余白を０にする */
+  ul.snsbtniti{
+    padding:0!important;
   }
-  
-  label{
-    font-size: 16px;
+  /* ボタン全体の位置 */
+  .snsbtniti{
+    /* display:flex; */
+    /* flex-flow:row wrap; */
+    justify-content:space-around;
+    float: left;
+    width:20%;
+    height: 100%;
   }
-  
-  table.kensakuTable{
-    border-collapse: collapse;
-    width: 97%;
-    margin: auto;
+  /* ボタン同士の余白 */
+  .snsbtniti li{
+    text-align:center!important;
+    list-style-type:none!important;
+    height: 75px;
   }
-  
-  table.kensakuTable th,table.kensakuTable tr,table.kensakuTable td{
-    border: solid 1px #a2a9af;
-    padding: 3px 10px;
+
+  .snsText{
+    justify-content:space-around;
+    float: left;
+    width: 80%;
+    height: 100%;
   }
-  
-  table.kensakuTable th{
-    background-color: #79bd9a99;
+
+  ul.snsText{
+    padding:0!important;
   }
-  
-  table.kensakuTable td{
-    background-color: #ffffff;
-    height: 16px;
+
+  .snsText li{
+    /* text-align:center!important; */
+    list-style-type:none!important;
+    height: 75px;
   }
-  
-  .general{
-    margin: 20px;
+
+  #snsBox{
+    padding: 16px;
+    padding-bottom: 0px;
+    overflow: hidden;
   }
-  
-  .isbnKensaku{
-    padding: 20px;
-    background-color: #00A0E933;
-  }
-  
-  .titleKensaku{
-    padding: 20px;
-    background-color: #79bd9a33;
-  }
-  
-  .form{
-    padding: 20px;
-    background-color: #fed95c33;
-  }
-  
-  .list{
-    padding: 20px;
-    background-color: #f69e5333;
-  } */
