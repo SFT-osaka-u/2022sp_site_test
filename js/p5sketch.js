@@ -3,6 +3,8 @@ let canvas;
 let logo;
 let logoW;
 let logoH;
+let logoTop;
+let logoLeft;
 let X = [];
 let flowInfos;
 let index = [0];
@@ -22,44 +24,53 @@ let subH;
 
 
 function preload() {
-    logo = createImg(convertUrl("1I2ZPhvu3ir-2U6jfy7_t2Bhmu-F8u-XH"), "").hide();
+    logo = select("#logo");
     flowInfos = selectAll(".flowInfo");
-    // p = createP("paragraph").position(0, 500);
+    // p = createP("paragraph").position(0, 150);
 }
 
 function windowResized() {
-    let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height;
+    let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height - document.getElementById("logo").offsetHeight;
 
     resizeCanvas(windowWidth, canvasH);
 }
 
 function setup() {
-    let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height;
-
+    let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height - document.getElementById("logo").offsetHeight;
     canvas = createCanvas(windowWidth, canvasH);
     canvas.position(0, 0);
     canvas.style('z-index', '-1');
     textAlign(CENTER, CENTER);
     imageMode(CENTER);
     textSize(24);
-    frameRate(60);
+    frameRate(30);
     for (i = 0; i < flowInfos.length; i++) {
         X.push(width + i);
     }
+
+    headerH = document.getElementsByTagName("header")[0].getBoundingClientRect().height;
+    footerH = document.getElementsByTagName("footer")[0].getBoundingClientRect().height;
+    logoW = Math.min(windowWidth, windowHeight - headerH - footerH) * 0.7;
+    logoH = logoW * logo.height / logo.width;
+    logo.style("width", logoW + "px");
+    logo.style("height", logoH + "px");
+    logoTop = (windowHeight - headerH - footerH) / 2 + headerH - logoH / 2;
+    logoLeft = windowWidth / 2 - logoW / 2;
+    logo.position(logoLeft, logoTop);
+    logo.style("position", "fixed");
+
 }
 
 function draw() {
     clear();
-
+    console.log(frameRate());
     scrollY = document.documentElement.scrollTop;
-    headerH = document.getElementsByTagName("header")[0].getBoundingClientRect().height;
     mainTop = document.getElementsByClassName("main")[0].getBoundingClientRect().top;
     srchTop = document.getElementById("srchField").offsetTop;
     srchH = document.getElementById("srchField").offsetHeight;
     rsvTop = document.getElementById("rsvField").offsetTop;
     rsvH = document.getElementById("rsvField").offsetHeight;
     subTop = document.getElementsByClassName("sub")[0].getBoundingClientRect().top;
-    footerH = document.getElementsByTagName("footer")[0].getBoundingClientRect().height;
     mainH = document.getElementsByClassName("main")[0].getBoundingClientRect().height;
     subH = document.getElementsByClassName("sub")[0].getBoundingClientRect().height;
 
@@ -67,13 +78,7 @@ function draw() {
     select(".sub").style("height", subH + "px");
 
     //background
-    background("#00A0E9aa");
-    logoW = Math.min(windowWidth, windowHeight - headerH - footerH) * 0.7;
-    logoH = logoW * logo.elt.height / logo.elt.width;
-    image(logo, windowWidth / 2, (windowHeight - headerH - footerH) / 2 + headerH + scrollY, logoW, logoH);
-    noStroke();
-    fill(255, 128);
-    rect(0, 0, width, height);
+    background(255, 128);
 
     //line
     stroke(0);
@@ -97,16 +102,14 @@ function draw() {
     fill(0);
     text("2", width * 0.075, Math.min(Math.max(posY1, posY2), subTop + scrollY - 30));
 
-
     // flowing information
     for (let i = 0; i < flowInfos.length; i++) {
         flowInfos[i].position(X[i], 0);
     }
 
     for (let i of index) {
-        X[i] -= 1;
+        X[i] -= 60/frameRate();
     }
-
 
     addIndex();
     rePosition();

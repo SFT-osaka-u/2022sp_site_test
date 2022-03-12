@@ -9,6 +9,12 @@ header{
   z-index: 1;
 }
 
+body{
+  background-color: #00A0E9aa;
+  position: absolute;
+  z-index: -3;
+}
+
 footer{
   position: fixed;
   bottom: 0px;
@@ -19,6 +25,12 @@ footer{
   text-align: center;
   margin: 0px 0px 0px 0px;
   z-index: 1;
+}
+
+#logo{
+  width:294px;
+  height: 324px;
+  z-index: -2;
 }
 
 #heading{
