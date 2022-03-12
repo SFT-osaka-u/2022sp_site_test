@@ -10,7 +10,7 @@ header{
 }
 
 body{
-  background-color: #00A0E9aa;
+  background-color: #ace5ff;
   position: absolute;
   z-index: -3;
 }
@@ -31,6 +31,7 @@ footer{
   width:294px;
   height: 324px;
   z-index: -2;
+  opacity: 0.5;
 }
 
 #heading{

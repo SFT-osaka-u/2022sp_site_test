@@ -22,6 +22,8 @@ let scrollY;
 let mainH;
 let subH;
 
+let cherries = [];
+let touch = false;
 
 function preload() {
     logo = select("#logo");
@@ -35,15 +37,25 @@ function windowResized() {
     resizeCanvas(windowWidth, canvasH);
 }
 
+function touchStarted() {
+    touch = true;
+  }
+  function touchEnded() {
+    touch = false;
+  }
+
 function setup() {
     let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height - document.getElementById("logo").offsetHeight;
     canvas = createCanvas(windowWidth, canvasH);
     canvas.position(0, 0);
     canvas.style('z-index', '-1');
+
     textAlign(CENTER, CENTER);
     imageMode(CENTER);
     textSize(24);
+
     frameRate(30);
+
     for (i = 0; i < flowInfos.length; i++) {
         X.push(width + i);
     }
@@ -78,7 +90,7 @@ function draw() {
     select(".sub").style("height", subH + "px");
 
     //background
-    background(255, 128);
+    // background(255, 128);
 
     //line
     stroke(0);
@@ -115,15 +127,28 @@ function draw() {
     rePosition();
     // p.html(X[0] + "/" + X[1] + "/" + X[2]);
     // p.html(X[1]-X[0]-flowInfos[0].size().width);
+
+    if (touch) {
+        let p = random(0, 1);
+        if (p < 0.3) {
+          cherries.push(new Cherry(mouseX, mouseY, 20));
+        }
+      }
+    
+    //   background("#00A0E955");
+      for (let i = 0; i < cherries.length; i++) {
+        cherries[i].show();
+        cherries[i].fall();
+        if (cherries[i].edge()) {
+          cherries.splice(i, 1);
+        }
+      }
 }
 
 function convertUrl(id) {
     return "https://drive.google.com/uc?id=" + id;
 }
 
-// function mouseClicked() {
-//     noLoop();
-// }
 
 function addIndex() {
     let i = index[index.length - 1]
@@ -143,4 +168,47 @@ function rePosition() {
         let min = X.reduce(aryMin);
         X[X.indexOf(min)] = width;
     }
+}
+
+
+class Cherry {
+  constructor(x, y, r) {
+    this.x = x + random(0, 20);
+    this.y = y + random(0, 40);
+    this.r = r;
+    this.vely = 50 / frameRate();
+    this.velx = (60 * map(noise(this.y), 0, 1, -2, 2)) / frameRate();
+    this.xoff = random(0, 10);
+    this.angle = random(-PI / 6, PI / 6);
+  }
+
+  show() {
+    noStroke();
+    fill(255, 40, 64, 30);
+    push();
+    translate(this.x, this.y-9);
+    rotate(this.angle);
+    // ellipse(this.x, this.y, this.r);
+    beginShape();
+    vertex(0, 0);
+    bezierVertex(-6, -6, -9, -12, -3, -18);
+    vertex(0, -15);
+    vertex(3, -18);
+    bezierVertex(9, -12, 6, -6, 0, 0);
+    endShape();
+    pop();
+  }
+
+  fall() {
+    this.x = this.x + this.velx + map(noise(this.xoff), 0, 1, -1, 1);
+    this.y += this.vely;
+    this.xoff += 0.6 / frameRate();
+    this.angle += 4*map(noise(this.xoff), 0, 1, -1, 1)/frameRate();
+  }
+
+  edge() {
+    if (this.x < 0 || this.x > width || this.y > height) {
+      return true;
+    }
+  }
 }
