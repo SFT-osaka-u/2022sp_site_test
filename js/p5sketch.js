@@ -32,9 +32,19 @@ function preload() {
 }
 
 function windowResized() {
-  let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height - document.getElementById("logo").offsetHeight;
-
+  let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height;
   resizeCanvas(windowWidth, canvasH);
+
+  headerH = document.getElementsByTagName("header")[0].getBoundingClientRect().height;
+  footerH = document.getElementsByTagName("footer")[0].getBoundingClientRect().height;
+  logoW = Math.min(windowWidth, windowHeight - headerH - footerH) * 0.7;
+  logoH = logoW * logo.height / logo.width;
+  logo.style("width", logoW + "px");
+  logo.style("height", logoH + "px");
+  logoTop = (windowHeight - headerH - footerH) / 2 + headerH - logoH / 2;
+  logoLeft = windowWidth / 2 - logoW / 2;
+  logo.position(logoLeft, logoTop);
+  logo.style("position", "fixed");
 }
 
 function touchStarted() {
@@ -45,7 +55,7 @@ function touchEnded() {
 }
 
 function setup() {
-  let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height - document.getElementById("logo").offsetHeight;
+  let canvasH = document.getElementsByTagName("body")[0].getBoundingClientRect().height - document.getElementsByTagName("main")[0].getBoundingClientRect().height;
   canvas = createCanvas(windowWidth, canvasH);
   canvas.position(0, 0);
   canvas.style('z-index', '-1');
@@ -120,7 +130,7 @@ function draw() {
   }
 
   for (let i of index) {
-    X[i] -= 60 / frameRate();
+    X[i] -= 50 / frameRate();
   }
 
   addIndex();

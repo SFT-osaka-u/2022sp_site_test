@@ -36,6 +36,9 @@ footer{
   height: 324px;
   z-index: -2;
   opacity: 0.5;
+  position:absolute;
+  top: 0;
+  left: 0;
 }
 
 #heading{
@@ -109,6 +112,26 @@ p{
   border-bottom: dashed #174a5c;
   padding: 2px;
   margin: 4px;
+}
+
+#resultAccordion{
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.isbn{
+  font-size: small;
+  padding-right: 8px;
+}
+
+.title{
+  font-weight: bold;
+}
+
+.accoContent{
+  border-left: thick solid #ff284030;
+  margin-top: 2px;
+  padding-left: 4px;
 }
 
 #flowBox{
