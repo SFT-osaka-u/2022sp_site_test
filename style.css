@@ -89,6 +89,12 @@ p{
   padding-bottom: 70px;
 }
 
+.eyeCatch{
+  width:90%;
+  height:auto;
+  margin:5%;
+}
+
 .main{
   width: 85%;
   height: auto;
@@ -137,6 +143,12 @@ p{
   border-left: thick solid #ff284030;
   margin-top: 2px;
   padding-left: 4px;
+}
+
+#rsvComplete{
+  background-color: #ffffff55;
+  border:solid #ff284030;
+  padding: 4px;
 }
 
 #flowBox{

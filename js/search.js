@@ -1,6 +1,6 @@
 var dataArr;
 
-window.onload = function(){
+window.onload = function () {
 	getData();
 }
 
@@ -78,7 +78,7 @@ function isbnSearch(isbn) {
 		let mid = Math.floor((min + max) / 2);
 
 		if (Number(dataArr[mid].isbn) === Number(isbn)) {
-			return {row:1,dtls:[dataArr[mid]]};
+			return { row: 1, dtls: [dataArr[mid]] };
 		}
 		else if (Number(dataArr[mid].isbn) < Number(isbn)) {
 			max = mid - 1;
@@ -87,7 +87,7 @@ function isbnSearch(isbn) {
 			min = mid + 1;
 		}
 	}
-	return {row:0,dtls:"nothing"};
+	return { row: 0, dtls: "nothing" };
 }
 
 /////////////////////////////////////
@@ -107,25 +107,36 @@ srchBtn.addEventListener('click', function () {
 		resultAccordion.innerHTML = "キーワードを入力してください";
 	}
 	else {
+		let results;
 		switch (srchMethod.value) {
-			case "教科書名":{
-				const results = titleSearch(srchWord.value);
+			case "教科書名": {
+				results = titleSearch(srchWord.value);
 				showResults(srchWord.value, results);
 			}
-			break;
+				break;
 
-			case "著者名":{
-				const results = authorSearch(srchWord.value);
+			case "著者名": {
+				results = authorSearch(srchWord.value);
 				showResults(srchWord.value, results);
 			}
-			break;
+				break;
 
-			case "ISBN":{
-				const results = isbnSearch(srchWord.value);
+			case "ISBN": {
+				results = isbnSearch(srchWord.value);
 				showResults(srchWord.value, results);
 			}
-			break;
+				break;
 		}
+
+		const srchData = {
+			"sort": "rcd",
+			"method": srchMethod.value + "@web",
+			"keyword": srchWord.value,
+			"hitNum": results.row.toString()
+		}
+
+		sendData(srchData);
+		window.alert(JSON.stringify(srchData));
 	}
 }, false)
 

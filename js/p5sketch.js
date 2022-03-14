@@ -64,7 +64,7 @@ function setup() {
   imageMode(CENTER);
   textSize(24);
 
-  frameRate(30);
+  // frameRate(30);
 
   for (i = 0; i < flowInfos.length; i++) {
     X.push(width + i);
