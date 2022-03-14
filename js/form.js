@@ -36,7 +36,7 @@ function check(type) {
 
 function autoComplement() {
   const isbn = document.getElementById("isbn_input").value;
-  const result = isbnSearch(isbn);
+  const result = isbnSearch(isbn).dtls[0];
   document.getElementById("isbnResult").removeAttribute("hidden");
 
   if (result === "nothing") {

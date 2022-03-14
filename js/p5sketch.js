@@ -96,9 +96,6 @@ function draw() {
   mainH = document.getElementsByClassName("main")[0].getBoundingClientRect().height;
   subH = document.getElementsByClassName("sub")[0].getBoundingClientRect().height;
 
-  select(".main").style("height", mainH + "px");
-  select(".sub").style("height", subH + "px");
-
   //background
   // background(255, 128);
 

@@ -91,6 +91,7 @@ p{
 
 .main{
   width: 85%;
+  height: auto;
   padding: 10px;
   margin-left: 15%;
   /* background-color: #b3d87455; */
@@ -98,6 +99,7 @@ p{
 
 .sub{
   width:100%;
+  height: auto;
   padding: 10px;
   margin-left: 0;
   /* background-color: #d874b355; */
@@ -115,8 +117,11 @@ p{
 }
 
 #resultAccordion{
-  margin-top: 4px;
+  margin-top: 8px;
   margin-left: 4px;
+  margin-bottom: 16px;
+  position:relative;
+  z-index: 0;
 }
 
 .isbn{
