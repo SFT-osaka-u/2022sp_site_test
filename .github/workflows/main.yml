@@ -1,0 +1,20 @@
+name: Deploy to GitHub Pages
+on:
+    push:
+        branches:
+        - main
+env:
+    SP2022_SITE_SS: ${{ secrets.sp2022_site_ss }}
+    
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v1
+
+        - name: Deploy
+          uses: JamesIves/github-pages-deploy-action@releases/v3
+          with:
+            BRANCH: main
+            FOLDER: .
