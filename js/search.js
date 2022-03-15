@@ -6,7 +6,7 @@ window.onload = function () {
 
 function getData() {
 	fetch(
-		`https://script.google.com/macros/s/AKfycbxMwU-INmESsqo36ibAISYHRAvbq2PWryO4AphSU-bTZ9TrJBgz6tRpcGWbb6nStcx6/exec`,
+		process.env.SP2022_SITE_SS,
 		{
 			method: "GET"
 		}
