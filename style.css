@@ -93,7 +93,20 @@ p{
   width:90%;
   height:auto;
   margin:5%;
-  position: relative;
+}
+
+.carousel-indicators{
+  position:relative;
+  z-index: 0;
+}
+
+.carousel-control-prev{
+  position:relative;
+  z-index: 0;
+}
+
+.carousel-control-next{
+  position:relative;
   z-index: 0;
 }
 
