@@ -172,7 +172,7 @@ function nextRsv(){
   }
 
 function sendData(data) {
-  fetch(`https://script.google.com/macros/s/AKfycbxMwU-INmESsqo36ibAISYHRAvbq2PWryO4AphSU-bTZ9TrJBgz6tRpcGWbb6nStcx6/exec`,
+  fetch(process.env.SP2022_SITE_SS,
     {
       "method": "POST",
       "mode": "no-cors",
