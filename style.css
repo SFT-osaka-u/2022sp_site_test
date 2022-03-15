@@ -96,18 +96,18 @@ p{
 }
 
 .carousel-indicators{
-  position:relative;
-  z-index: 0;
+  position:absolute;
+  z-index: 1;
 }
 
 .carousel-control-prev{
-  position:relative;
-  z-index: 0;
+  position:absolute;
+  z-index: 1;
 }
 
 .carousel-control-next{
-  position:relative;
-  z-index: 0;
+  position:absolute;
+  z-index: 1;
 }
 
 .main{
