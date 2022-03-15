@@ -96,9 +96,6 @@ function draw() {
   mainH = document.getElementsByClassName("main")[0].getBoundingClientRect().height;
   subH = document.getElementsByClassName("sub")[0].getBoundingClientRect().height;
 
-  //background
-  // background(255, 128);
-
   //line
   stroke(0);
   line(width * 0.075, mainTop, width * 0.075, subTop + scrollY);
