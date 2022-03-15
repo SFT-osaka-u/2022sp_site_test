@@ -93,6 +93,8 @@ p{
   width:90%;
   height:auto;
   margin:5%;
+  position: relative;
+  z-index: 0;
 }
 
 .main{
