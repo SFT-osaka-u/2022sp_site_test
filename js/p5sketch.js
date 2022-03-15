@@ -10,6 +10,7 @@ let flowInfos;
 let index = [0];
 let p;
 let headerH;
+let eyeCatchH;
 let mainTop;
 let srchTop;
 let srchH;
@@ -80,6 +81,7 @@ function setup() {
   logoLeft = windowWidth / 2 - logoW / 2;
   logo.position(logoLeft, logoTop);
   logo.style("position", "fixed");
+  eyeCatchH = document.getElementsByClassName("eyeCatch")[0].getBoundingClientRect().height;
 
 }
 
@@ -106,20 +108,21 @@ function draw() {
   // number 1
   fill(255);
   stroke(0);
-  let posY1 = mainTop + 30 + 2 * scrollY;
-  ellipse(width * 0.075, Math.min(posY1, rsvTop - 30), 30, 30);
+  let posY0 =mainTop + 30 + 2 * scrollY-eyeCatchH;
+  let posY1 = mainTop + 30 +  scrollY;
+  ellipse(width * 0.075, Math.min(Math.max(posY0,posY1), rsvTop - 30), 30, 30);
 
   fill(0);
-  text("1", width * 0.075, Math.min(posY1, rsvTop - 30));
+  text("1", width * 0.075, Math.min(Math.max(posY0,posY1), rsvTop - 30));
 
   // number 2
   fill(255);
   stroke(0);
   let posY2 = rsvTop + 20;
-  ellipse(width * 0.075, Math.min(Math.max(posY1, posY2), subTop + scrollY - 30), 30, 30);
+  ellipse(width * 0.075, Math.min(Math.max(posY0, posY2), subTop + scrollY - 30), 30, 30);
 
   fill(0);
-  text("2", width * 0.075, Math.min(Math.max(posY1, posY2), subTop + scrollY - 30));
+  text("2", width * 0.075, Math.min(Math.max(posY0, posY2), subTop + scrollY - 30));
 
   // flowing information
   for (let i = 0; i < flowInfos.length; i++) {
