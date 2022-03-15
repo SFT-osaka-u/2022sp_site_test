@@ -10,7 +10,7 @@ header{
   color: white;
   margin: 0px 0px 0px 0px;
   padding-top: 10px;
-  z-index: 1;
+  z-index: 10;
 }
 
 body{
@@ -28,7 +28,7 @@ footer{
   color: white;
   text-align: center;
   margin: 0px 0px 0px 0px;
-  z-index: 1;
+  z-index: 10;
 }
 
 #logo{
