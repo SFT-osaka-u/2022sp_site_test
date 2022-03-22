@@ -19,34 +19,34 @@
 <body>
   <header>
     <h2 id="heading">2022春 教科書半額販売イベント</h2>
-    <p id="schedule">4/6(水)~8(金) 10:30-14:30<br>11(月)~15(金) 16:30-19:00</p>
+    <p id="schedule">4/6(水)~8(金) 10:30-14:30<br>11(月)~15(金) 16:00-19:00</p>
     <p id="place">@阪大坂途中 万福寺さん前</p>
     <p id="branch">STUDY FOR TWO 大阪大学支部</p>
   </header>
   <div class="body">
     <div class="eyeCatch">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://drive.google.com/uc?id=1yCiJu1NwXt5MjuVkoZlGTwoluuGrBui-" alt="支援のしくみ" class="d-block w-100">
+            <img src="img/春販売2022アイキャッチ_販売の様子.png" alt="販売イベントの様子" class="d-block w-100">
           </div>
           <div class="carousel-item">
-            <img src="https://drive.google.com/uc?id=1yCiJu1NwXt5MjuVkoZlGTwoluuGrBui-" alt="支援のしくみ" class="d-block w-100">
+            <img src="img/回収・販売の仕組み_resize.png" alt="支援のしくみ" class="d-block w-100">
           </div>
           <div class="carousel-item">
             <img src="https://drive.google.com/uc?id=1yCiJu1NwXt5MjuVkoZlGTwoluuGrBui-" alt="支援のしくみ" class="d-block w-100">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -152,20 +152,17 @@
             <label for="select_date" class="col-form-label">受取日</label>
             <select class="form-select" id="select_date" required="">
               <option value="">受取日をご選択ください</option>
-              <option value="1日目">1日目</option>
-              <option value="2日目">2日目</option>
-              <option value="3日目">3日目</option>
-              <option value="4日目">4日目</option>
-              <option value="5日目">5日目</option>
-              <option value="6日目">6日目</option>
-              <option value="7日目">7日目</option>
-              <option value="8日目">8日目</option>
-              <option value="9日目">9日目</option>
-              <option value="10日目">10日目</option>
-            </select>
-            <div class="ms-4 mt-2">
-              <p>【販売日程】<br>xx/xx(x)～xx/xx(x)
-                土日除く<br>16:30-19:00<br>【お受け取り方法】<br>豊中キャンパス阪大坂の中腹にあります万福寺さん前の露店にて直接受け渡しさせていただきます。</p>
+              <option value="4/6(水)">4/6(水) 10:30-14:30</option>
+                    <option value="4/7(木)">4/7(木) 10:30-14:30</option>
+                    <option value="4/8(金)">4/8(金) 10:30-14:30</option>
+                    <option value="4/11(月)">4/11(月) 16:00-19:00</option>
+                    <option value="4/12(火)">4/12(火) 16:00-19:00</option>
+                    <option value="4/13(水)">4/13(水) 16:00-19:00</option>
+                    <option value="4/14(木)">4/14(木) 16:00-19:00</option>
+                    <option value="4/15(金)">4/15(金) 16:00-19:00</option>
+                </select>
+                <div class="ms-4 mt-2">
+                    <p>【販売日程】<br>4/6(水)～4/8(金) 10:30-14:30<br>4/11(月)～4/15(金) 16:00~19:00<br>【お受け取り方法】<br>豊中キャンパス阪大坂の中腹にあります万福寺さん前の露店にて直接受け渡しさせていただきます。</p>
             </div>
           </div>
           <div class="row mb-3">
@@ -197,7 +194,7 @@
           を目指して活動しています。<br>
           大学生に使い終えた教科書を寄付していただき、安価に再販売して、得られた利益をラオスやバングラデシュの子どもたちへの教育支援に充てています。
         </p>
-        <img src="https://drive.google.com/uc?id=1yCiJu1NwXt5MjuVkoZlGTwoluuGrBui-" alt="支援のしくみ" width="100%">
+        <img src="img/回収・販売の仕組み_resize.png" alt="支援のしくみ" width="100%">
       </div><br>
       <div id="oneCoinSale">
         <h3>ワンコインセール</h3>
@@ -269,8 +266,7 @@
       <div class="footerLink snsLink">SNS</div>
     </div>
   </footer>
-  <!-- <img id="logo" src="https://drive.google.com/uc?id=1I2ZPhvu3ir-2U6jfy7_t2Bhmu-F8u-XH"> -->
-  <img id="logo" src="SFT_logo_transparent.png">
+  <img id="logo" src="img/SFT_logo_transparent.png">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
