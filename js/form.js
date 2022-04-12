@@ -87,73 +87,74 @@ window.onload = function () {
   // document.getElementById("submit").addEventListener("click", function () {
     const rsvForm = document.getElementById("rsvForm");
     rsvForm.addEventListener("submit",function(){
-    const rsvData = {
-      "sort":"rsv",
-      "name": document.getElementById("input_name").value,
-      "faculty": (document.getElementById("select_faculty").value === "その他") ? document.getElementById("others_faculty").value : document.getElementById("select_faculty").value,
-      "grade": (document.getElementById("select_grade").value === "その他") ? document.getElementById("others_grade").value : document.getElementById("select_grade").value,
-      "isbn": document.getElementById("isbn_input").value,
-      "title": document.getElementById("title_auto").value,
-      "author1": document.getElementById("author_auto").value,
-      "sellingPrice": document.getElementById("sellingPrice").innerHTML || null,
-      "date": document.getElementById("select_date").value,
-      "mail": document.getElementById("email_input").value
-    }
+      window.alert("申し訳ございません。現在、予約申し込みは停止しております。\n予約申し込み期間は4/14(木)23:59までです。");
+    // const rsvData = {
+    //   "sort":"rsv",
+    //   "name": document.getElementById("input_name").value,
+    //   "faculty": (document.getElementById("select_faculty").value === "その他") ? document.getElementById("others_faculty").value : document.getElementById("select_faculty").value,
+    //   "grade": (document.getElementById("select_grade").value === "その他") ? document.getElementById("others_grade").value : document.getElementById("select_grade").value,
+    //   "isbn": document.getElementById("isbn_input").value,
+    //   "title": document.getElementById("title_auto").value,
+    //   "author1": document.getElementById("author_auto").value,
+    //   "sellingPrice": document.getElementById("sellingPrice").innerHTML || null,
+    //   "date": document.getElementById("select_date").value,
+    //   "mail": document.getElementById("email_input").value
+    // }
   
-    sendData(rsvData);
+    // sendData(rsvData);
   
-    // window.alert("sendData");
-    // window.alert(JSON.stringify(rsvData));
-    const rsvComplete = document.getElementById("rsvComplete");
-    rsvComplete.removeAttribute("hidden");
-    rsvComplete.innerHTML =
-      `<p font-size="small">ありがとうございます！以下の内容でご予約申し込みを受け付けました。<br>
-      残り在庫数を確認の上、ご入力いただいたメールアドレス宛に予約完了／在庫切れのお知らせを送信いたしますのでご確認ください。<br>
-      在庫数の確認は1日以内に行う予定ですが、時間がかかる場合もございますので予めご了承ください。</p>
-      <br>
-        <table class="table table-striped table-hover">
-        <tbody>
-        <tr>
-          <td>お名前</td>
-          <td>${rsvData.name}</td>
-        </tr>
-        <tr>
-          <td>所属</td>
-          <td>${rsvData.faculty}</td>
-        </tr>
-        <tr>
-          <td>学年</td>
-          <td>${rsvData.grade}</td>
-        </tr>
-        <tr>
-          <td>ISBN</td>
-          <td>${rsvData.isbn}</td>
-        </tr>
-        <tr>
-          <td>教科書名</td>
-          <td id="sellingPrice">${rsvData.title}</td>
-        </tr>
-        <tr>
-          <td>著者名</td>
-          <td>${rsvData.author1}</td>
-        </tr>
-        <tr>
-          <td>受取日</td>
-          <td>${rsvData.date}</td>
-        </tr>
-        <tr>
-        <td>メールアドレス</td>
-        <td>${rsvData.mail}</td>
-      </tr>
-      </tbody></table>
-      <br>
-      <button class="btn btn-primary" onclick="nextRsv()">他の教科書を予約する</button>`; // onclick="location.reload()"
+    // // window.alert("sendData");
+    // // window.alert(JSON.stringify(rsvData));
+    // const rsvComplete = document.getElementById("rsvComplete");
+    // rsvComplete.removeAttribute("hidden");
+    // rsvComplete.innerHTML =
+    //   `<p font-size="small">ありがとうございます！以下の内容でご予約申し込みを受け付けました。<br>
+    //   残り在庫数を確認の上、ご入力いただいたメールアドレス宛に予約完了／在庫切れのお知らせを送信いたしますのでご確認ください。<br>
+    //   在庫数の確認は1日以内に行う予定ですが、時間がかかる場合もございますので予めご了承ください。</p>
+    //   <br>
+    //     <table class="table table-striped table-hover">
+    //     <tbody>
+    //     <tr>
+    //       <td>お名前</td>
+    //       <td>${rsvData.name}</td>
+    //     </tr>
+    //     <tr>
+    //       <td>所属</td>
+    //       <td>${rsvData.faculty}</td>
+    //     </tr>
+    //     <tr>
+    //       <td>学年</td>
+    //       <td>${rsvData.grade}</td>
+    //     </tr>
+    //     <tr>
+    //       <td>ISBN</td>
+    //       <td>${rsvData.isbn}</td>
+    //     </tr>
+    //     <tr>
+    //       <td>教科書名</td>
+    //       <td id="sellingPrice">${rsvData.title}</td>
+    //     </tr>
+    //     <tr>
+    //       <td>著者名</td>
+    //       <td>${rsvData.author1}</td>
+    //     </tr>
+    //     <tr>
+    //       <td>受取日</td>
+    //       <td>${rsvData.date}</td>
+    //     </tr>
+    //     <tr>
+    //     <td>メールアドレス</td>
+    //     <td>${rsvData.mail}</td>
+    //   </tr>
+    //   </tbody></table>
+    //   <br>
+    //   <button class="btn btn-primary" onclick="nextRsv()">他の教科書を予約する</button>`; // onclick="location.reload()"
     
-    rsvComplete.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "start"
-    });
+    // rsvComplete.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "center",
+    //   inline: "start"
+    // });
   
   }, false);
   
